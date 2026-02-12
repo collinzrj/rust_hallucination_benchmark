@@ -1,0 +1,1867 @@
+{
+  "summary": {
+    "total_samples": 69,
+    "compile_fail_samples": 62,
+    "samples_with_hallucinations": 16,
+    "hallucination_rate": 0.2318840579710145,
+    "hallucination_type_distribution": {
+      "import": 10,
+      "method": 8,
+      "feature": 1
+    },
+    "top_hallucinated_methods": {
+      "clone": 4,
+      "repeat_row": 2,
+      "str": 1,
+      "into_stream": 1,
+      "blob_client": 1,
+      "container_client": 1,
+      "with_shutdown": 1
+    },
+    "top_hallucinated_types": {
+      "tokio": 18,
+      "futures": 2,
+      "uuid": 1,
+      "azure_storage::StorageCredentials": 1,
+      "env_logger": 1
+    },
+    "top_hallucinated_crates": {
+      "tokio": 18,
+      "uuid": 1,
+      "azure_storage": 1,
+      "env_logger": 1,
+      "futures": 1,
+      "futures`": 1
+    },
+    "top_hallucinated_features": {
+      "typed-header": 1
+    },
+    "wrong_signature_count": 0,
+    "top_error_codes": {
+      "E0277": 33,
+      "E0599": 25,
+      "E0433": 22,
+      "cargo-build-failure": 20,
+      "null": 11,
+      "E0282": 8,
+      "E0308": 8,
+      "E0596": 6,
+      "E0432": 4,
+      "E0515": 4,
+      "E0752": 3,
+      "E0435": 3,
+      "E0425": 3,
+      "E0782": 2,
+      "E0119": 2,
+      "E0107": 2,
+      "E0382": 2,
+      "E0423": 1,
+      "E0765": 1,
+      "E0437": 1
+    }
+  },
+  "per_sample_analysis": [
+    {
+      "index": 1,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0596"
+      ]
+    },
+    {
+      "index": 2,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0782",
+        "E0782",
+        "E0596",
+        "E0596"
+      ]
+    },
+    {
+      "index": 3,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio"
+        ],
+        "crates": [
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0599",
+        "E0599",
+        "E0282",
+        "E0752"
+      ]
+    },
+    {
+      "index": 4,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `str` found for struct `polars::prelude::Series` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no variant or associated item named `Struct` found for enum `polars::prelude::DataType` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no variant or associated item named `String` found for enum `polars::prelude::DataType` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no variant or associated item named `String` found for enum `polars::prelude::DataType` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "str"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0277",
+        "E0599",
+        "E0282",
+        "E0282",
+        "E0599",
+        "E0599",
+        "E0599"
+      ]
+    },
+    {
+      "index": 5,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 6,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 7,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "tokio"
+        ],
+        "crates": [
+          "tokio"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0752",
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "index": 8,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 9,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 10,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `viewBox` found for struct `svg` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0423",
+        "E0308",
+        "E0599",
+        "E0596",
+        "E0596"
+      ]
+    },
+    {
+      "index": 11,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 12,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0765"
+      ]
+    },
+    {
+      "index": 13,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 14,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0596"
+      ]
+    },
+    {
+      "index": 15,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0308"
+      ]
+    },
+    {
+      "index": 16,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 17,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0437",
+        "E0599"
+      ]
+    },
+    {
+      "index": 18,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 19,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 20,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `uuid`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "uuid"
+        ],
+        "crates": [
+          "uuid"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0277"
+      ]
+    },
+    {
+      "index": 21,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 22,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 23,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0308",
+        "E0277",
+        "E0308",
+        "E0277",
+        "E0004"
+      ]
+    },
+    {
+      "index": 24,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import",
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved import `azure_storage::StorageCredentials`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `into_stream` found for struct `ListBlobsBuilder<'a>` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `blob_client` found for reference `&azure_storage_blobs::prelude::ContainerClient` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `container_client` found for struct `Arc<azure_storage_blobs::prelude::BlobServiceClient>` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "into_stream",
+          "blob_client",
+          "container_client"
+        ],
+        "types": [
+          "azure_storage::StorageCredentials"
+        ],
+        "crates": [
+          "azure_storage"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0432",
+        "E0599",
+        "E0599",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0624",
+        "E0061",
+        "E0599"
+      ]
+    },
+    {
+      "index": 25,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 26,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0637",
+        "E0277"
+      ]
+    },
+    {
+      "index": 27,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0119",
+        "E0277",
+        "E0277"
+      ]
+    },
+    {
+      "index": 28,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 29,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 30,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 31,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 32,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0119",
+        "E0277",
+        "E0507"
+      ]
+    },
+    {
+      "index": 33,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0716",
+        "E0515",
+        "E0515",
+        "E0505"
+      ]
+    },
+    {
+      "index": 34,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        null
+      ]
+    },
+    {
+      "index": 35,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import",
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved imports `expectrl::Spawn`, `expectrl::Pty`, `expectrl::Timeout`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `clone` found for struct `Session<P, S>` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "clone"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        null,
+        "E0432",
+        "E0599",
+        "E0282",
+        "E0282"
+      ]
+    },
+    {
+      "index": 36,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599",
+        "E0599"
+      ]
+    },
+    {
+      "index": 37,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        null
+      ]
+    },
+    {
+      "index": 38,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `from_request_parts` found for struct `Json<RevokeUser>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0277",
+        "E0599",
+        "E0277",
+        "E0277",
+        "E0277"
+      ]
+    },
+    {
+      "index": 39,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "tokio",
+          "tokio"
+        ],
+        "crates": [
+          "tokio",
+          "tokio"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0433",
+        "E0277",
+        null
+      ]
+    },
+    {
+      "index": 40,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0283"
+      ]
+    },
+    {
+      "index": 41,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0271",
+        null
+      ]
+    },
+    {
+      "index": 42,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0425",
+          "message": "cannot find value `Tokio` in module `opentelemetry::runtime`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0425",
+          "message": "cannot find function `subscriber` in crate `tracing_opentelemetry`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `tokio`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio"
+        ],
+        "crates": [
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio",
+          "tokio"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0435",
+        "E0433",
+        "E0435",
+        "E0433",
+        "E0435",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0425",
+        "E0425",
+        "E0728",
+        "E0277",
+        "E0599",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0308",
+        "E0752"
+      ]
+    },
+    {
+      "index": 43,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0277",
+        "E0277"
+      ]
+    },
+    {
+      "index": 44,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 45,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 46,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 47,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599",
+        "E0282",
+        "E0282"
+      ]
+    },
+    {
+      "index": 48,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0404",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0277"
+      ]
+    },
+    {
+      "index": 49,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 50,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        null
+      ]
+    },
+    {
+      "index": 51,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import",
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `env_logger`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `clone` found for struct `tokio::sync::oneshot::Receiver<T>` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `with_shutdown` found for struct `Server` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `clone` found for struct `tokio::sync::oneshot::Receiver<T>` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "clone",
+          "with_shutdown",
+          "clone"
+        ],
+        "types": [
+          "env_logger"
+        ],
+        "crates": [
+          "env_logger"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0599",
+        "E0599",
+        "E0599"
+      ]
+    },
+    {
+      "index": 52,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `repeat_row` found for struct `Matrix<T, R, C, S>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `repeat_row` found for struct `Matrix<T, R, C, S>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "repeat_row",
+          "repeat_row"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599",
+        "E0599"
+      ]
+    },
+    {
+      "index": 53,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `clone` found for struct `Client` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "clone"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0308",
+        "E0599"
+      ]
+    },
+    {
+      "index": 54,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0063",
+        "E0308",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0308"
+      ]
+    },
+    {
+      "index": 55,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 56,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        null
+      ]
+    },
+    {
+      "index": 57,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 58,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 59,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0107",
+        "E0599",
+        "E0282"
+      ]
+    },
+    {
+      "index": 60,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 61,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 62,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0603",
+        "E0107"
+      ]
+    },
+    {
+      "index": 63,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "feature"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "cargo-build-failure",
+          "message": "Updating crates.io index\nerror: failed to select a version for `axum-extra`.\n    ... required by package `websocket-origin-check v0.1.0 (/tmp/tmppkh5h_cm)`\nversions that meet the requirements `^0.4` are: 0.4.2, 0.4.1, 0.4.0\n\npackage `websocket-origin-check` depends on `axum-extra` with feature `typed-header` but `axum-extra` does not have that feature.\n\n\nfailed to select a version for `axum-extra` which could resolve this conflict",
+          "msg_hallucination_types": [
+            "feature"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [
+          "typed-header"
+        ],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 64,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `futures`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0432",
+          "message": "unresolved import `futures`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0425",
+          "message": "cannot find type `Body` in crate `hyper`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: could not find `Body` in `hyper`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "futures",
+          "futures"
+        ],
+        "crates": [
+          "futures",
+          "futures`"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0432",
+        "E0425",
+        "E0433"
+      ]
+    },
+    {
+      "index": 65,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 66,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0515",
+        "E0515"
+      ]
+    },
+    {
+      "index": 67,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599",
+        "E0382",
+        "E0382"
+      ]
+    },
+    {
+      "index": 68,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0562"
+      ]
+    },
+    {
+      "index": 69,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved imports `tokio_stream`, `tokio_stream`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0432"
+      ]
+    }
+  ]
+}

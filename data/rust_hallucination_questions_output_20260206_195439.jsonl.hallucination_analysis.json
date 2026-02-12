@@ -1,0 +1,1547 @@
+{
+  "summary": {
+    "total_samples": 68,
+    "compile_fail_samples": 30,
+    "samples_with_hallucinations": 17,
+    "hallucination_rate": 0.25,
+    "hallucination_type_distribution": {
+      "feature": 4,
+      "method": 8,
+      "import": 7
+    },
+    "top_hallucinated_methods": {
+      "send": 3,
+      "as_raw_fd": 1,
+      "repeat": 1,
+      "deserialize": 1,
+      "clone": 1,
+      "ws": 1
+    },
+    "top_hallucinated_types": {
+      "extra": 2,
+      "chumsky::span::SimpleSpan": 1,
+      "crate::log_and_explain_400": 1,
+      "tokio_stream::wrappers::BroadcastStream": 1,
+      "rocket_ws::Client": 1
+    },
+    "top_hallucinated_crates": {
+      "extra": 2,
+      "chumsky": 1,
+      "crate": 1,
+      "tokio_stream": 1,
+      "rocket_ws": 1
+    },
+    "top_hallucinated_features": {
+      "reload": 1,
+      "dtype-list": 1,
+      "bevy_app": 1,
+      "ber": 1
+    },
+    "wrong_signature_count": 0,
+    "top_error_codes": {
+      "E0599": 10,
+      "cargo-build-failure": 7,
+      "E0277": 6,
+      "E0282": 5,
+      "E0432": 5,
+      "E0433": 5,
+      "E0119": 5,
+      "E0308": 3,
+      "E0425": 3,
+      "E0271": 3,
+      "E0107": 2,
+      "E0283": 2,
+      "E0658": 2,
+      "E0804": 2,
+      "E0004": 1,
+      "E0405": 1,
+      "E0659": 1,
+      "E0369": 1,
+      "E0195": 1,
+      "E0053": 1
+    }
+  },
+  "per_sample_analysis": [
+    {
+      "index": 1,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 2,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 3,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 4,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 5,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 6,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 7,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 8,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0107",
+        "E0282"
+      ]
+    },
+    {
+      "index": 9,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 10,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "feature"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "cargo-build-failure",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic-log v0.1.0 (/tmp/tmpq_8k9dxe)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic-log` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "msg_hallucination_types": [
+            "feature"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [
+          "reload"
+        ],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 11,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 12,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 13,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 14,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 15,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 16,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 17,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 18,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0277",
+        "E0308",
+        "E0277",
+        "E0308",
+        "E0277",
+        "E0004"
+      ]
+    },
+    {
+      "index": 19,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 20,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 21,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `as_raw_fd` found for struct `Session<P, S>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "as_raw_fd"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599"
+      ]
+    },
+    {
+      "index": 22,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved import `chumsky::span::SimpleSpan`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0405",
+          "message": "cannot find trait `Input` in this scope",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0425",
+          "message": "cannot find type `Rich` in this scope",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0425",
+          "message": "cannot find type `Rich` in this scope",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `extra`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `extra`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "chumsky::span::SimpleSpan",
+          "extra",
+          "extra"
+        ],
+        "crates": [
+          "chumsky",
+          "extra",
+          "extra"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0432",
+        "E0405",
+        "E0425",
+        "E0425",
+        "E0433",
+        "E0433"
+      ]
+    },
+    {
+      "index": 23,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 24,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 25,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved import `crate::log_and_explain_400`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "crate::log_and_explain_400"
+        ],
+        "crates": [
+          "crate"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0432",
+        "E0659"
+      ]
+    },
+    {
+      "index": 26,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "feature"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "cargo-build-failure",
+          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_struct_map v0.1.0 (/tmp/tmpemixyv3n)`\nversions that meet the requirements `^0.33.2` are: 0.33.2\n\npackage `polars_list_struct_map` depends on `polars` with feature `dtype-list` but `polars` does not have that feature.\n package `polars` does have feature `dtype-i16`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
+          "msg_hallucination_types": [
+            "feature"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [
+          "dtype-list"
+        ],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 27,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 28,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 29,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 30,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 31,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 32,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 33,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 34,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0369",
+        "E0283"
+      ]
+    },
+    {
+      "index": 35,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 36,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 37,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 38,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `repeat` found for struct `Matrix<f64, Const<1>, Dyn, VecStorage<f64, Const<1>, Dyn>>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "repeat"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599"
+      ]
+    },
+    {
+      "index": 39,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 40,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved imports `rustyline::KeySeq`, `rustyline::PromptInfo`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0432",
+        "E0195"
+      ]
+    },
+    {
+      "index": 41,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0107",
+        "E0282"
+      ]
+    },
+    {
+      "index": 42,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 43,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `send` found for struct `Logger<Backend, Formatter>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `send` found for struct `Logger<Backend, Formatter>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `send` found for struct `Logger<Backend, Formatter>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "send",
+          "send",
+          "send"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599",
+        "E0599",
+        "E0599"
+      ]
+    },
+    {
+      "index": 44,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 45,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 46,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 47,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import",
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: could not find `async_trait` in `axum`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: could not find `async_trait` in `axum`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: could not find `async_trait` in `axum`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "`<Json<T> as FromRequest<S, B>>::Rejection` doesn't implement `std::fmt::Display`",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0119",
+        "E0053",
+        "E0308",
+        "E0599"
+      ]
+    },
+    {
+      "index": 48,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved import `tokio_stream::wrappers::BroadcastStream`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [
+          "tokio_stream::wrappers::BroadcastStream"
+        ],
+        "crates": [
+          "tokio_stream"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0432",
+        "E0624"
+      ]
+    },
+    {
+      "index": 49,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 50,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0621"
+      ]
+    },
+    {
+      "index": 51,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0283",
+        "E0521"
+      ]
+    },
+    {
+      "index": 52,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 53,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `new` found for struct `LocalScheduler` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599"
+      ]
+    },
+    {
+      "index": 54,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 55,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0425",
+          "message": "cannot find function `scope` in module `task`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0425",
+        "E0282"
+      ]
+    },
+    {
+      "index": 56,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0119"
+      ]
+    },
+    {
+      "index": 57,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 58,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 59,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0119",
+        "E0119",
+        "E0119"
+      ]
+    },
+    {
+      "index": 60,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `deserialize` found for enum `Result<T, E>` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "deserialize"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599"
+      ]
+    },
+    {
+      "index": 61,
+      "status": "ok",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": []
+    },
+    {
+      "index": 62,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no method named `clone` found for struct `Client` in the current scope",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "clone"
+        ],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0599"
+      ]
+    },
+    {
+      "index": 63,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "feature"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "cargo-build-failure",
+          "message": "Updating crates.io index\nerror: failed to select a version for `bevy`.\n    ... required by package `lazy_asset_loader v0.1.0 (/tmp/tmpc0ztgs8j)`\nversions that meet the requirements `^0.12` are: 0.12.1, 0.12.0\n\npackage `lazy_asset_loader` depends on `bevy` with feature `bevy_app` but `bevy` does not have that feature.\n package `bevy` does have feature `bevy_pbr`\n\n\nfailed to select a version for `bevy` which could resolve this conflict",
+          "msg_hallucination_types": [
+            "feature"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [
+          "bevy_app"
+        ],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 64,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0658",
+        "E0658",
+        "E0309",
+        "E0271",
+        "E0271",
+        "E0271"
+      ]
+    },
+    {
+      "index": 65,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 66,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import",
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved import `rocket_ws::Client`",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `ws` found for struct `rocket::local::asynchronous::Client` in the current scope",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [
+          "ws"
+        ],
+        "types": [
+          "rocket_ws::Client"
+        ],
+        "crates": [
+          "rocket_ws"
+        ],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0432",
+        "E0599",
+        "E0282",
+        "E0282"
+      ]
+    },
+    {
+      "index": 67,
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "feature"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "cargo-build-failure",
+          "message": "Updating crates.io index\nerror: failed to select a version for `der`.\n    ... required by package `scep_decode v0.1.0 (/tmp/tmp0k2krdmg)`\nversions that meet the requirements `^0.7` are: 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1\n\npackage `scep_decode` depends on `der` with feature `ber` but `der` does not have that feature.\n package `der` does have feature `pem`\n\n\nfailed to select a version for `der` which could resolve this conflict",
+          "msg_hallucination_types": [
+            "feature"
+          ]
+        }
+      ],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [
+          "ber"
+        ],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "cargo-build-failure"
+      ]
+    },
+    {
+      "index": 68,
+      "status": "compile_fail",
+      "has_hallucination": false,
+      "hallucination_types": [],
+      "hallucination_errors": [],
+      "hallucinated_items": {
+        "methods": [],
+        "types": [],
+        "crates": [],
+        "features": [],
+        "traits": []
+      },
+      "wrong_signatures": [],
+      "error_codes": [
+        "E0804",
+        "E0804"
+      ]
+    }
+  ]
+}

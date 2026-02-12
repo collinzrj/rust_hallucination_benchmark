@@ -1,0 +1,6 @@
+{"prompt": "What is the capital of France?", "id": "test1"}
+{"prompt": "Write a Python function to calculate the factorial of a number.", "id": "test2"}
+{"prompt": "Explain the difference between a list and a tuple in Python.", "id": "test3"}
+{"body": "How do I implement a binary search algorithm in Rust?", "id": "test4", "title": "Binary search in Rust"}
+{"prompt": "What are the main features of Rust programming language?", "id": "test5"}
+
