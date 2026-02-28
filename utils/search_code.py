@@ -1,10 +1,10 @@
 import json_repair
-
-path = '/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260211_134843.jsonl'
+import sys
+path = '/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260216_131641.jsonl'
 
 with open(path, 'r') as f:
     lines = f.readlines()
-    pattern = "    let engine = GeneticEngine::from_codex(&codex)"
+    pattern = sys.argv[1]
     for line in lines:
         if pattern in line:
             data = json_repair.loads(line)
