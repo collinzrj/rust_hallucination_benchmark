@@ -30,6 +30,10 @@ When generating code, LLMs sometimes "hallucinate" - they invent APIs, methods, 
 | qwen3-max-2026-01-23 | 39/345 (11.30%) | 61/345 (17.68%) | 13/345 (3.77%) | 99/345 (28.70%) |
 | qwen/qwen3.5-plus-02-15 | 39/345 (11.30%) | 61/345 (17.68%) | 10/345 (2.90%) | 93/345 (26.96%) |
 
+## TODO
+- Evaluate More models
+- Adding support for more programming languages
+
 ## Pipeline
 
 ```
