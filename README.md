@@ -23,9 +23,9 @@ When generating code, LLMs sometimes "hallucinate" - they invent APIs, methods, 
 
 | Model | Method Hallucination | Import Hallucination | Feature Hallucination | Any Hallucination |
 | --- | --- | --- | --- | --- |
-| openai/gpt-5.2 | 27 (7.83%) | 31 (8.99%) | 14 (4.06%) | 70 (20.29%) |
 | google/gemini-3.1-pro-preview | 18 (5.22%) | 9 (2.61%) | 4 (1.16%) | 31 (8.99%) |
 | anthropic/claude-opus-4.6 | 16 (4.64%) | 53 (15.36%) | 6 (1.74%) | 68 (19.71%) |
+| openai/gpt-5.2 | 27 (7.83%) | 31 (8.99%) | 14 (4.06%) | 70 (20.29%) |
 | z-ai/glm-5 | 31 (8.99%) | 62 (17.97%) | 7 (2.03%) | 88 (25.51%) |
 | qwen/qwen3.5-plus-02-15 | 45 (13.04%) | 71 (20.58%) | 10 (2.90%) | 105 (30.43%) |
 | qwen3-max-2026-01-23 | 42 (12.17%) | 66 (19.13%) | 13 (3.77%) | 106 (30.72%) |
