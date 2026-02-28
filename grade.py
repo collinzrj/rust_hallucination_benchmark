@@ -354,23 +354,26 @@ def save_parsed_files_from_jsonl_line(
 
 
 if __name__ == "__main__":
-    # text = "To solve this problem, we'll use the Rayon crate for parallel processing. The approach involves:\n1. Using `par_iter()` on the outer vector to process inner vectors in parallel\n2. For each inner vector, use `par_iter().map()` to process individual elements in parallel\n3. Collect results into a new nested vector with preserved structure\n\nHere's the complete solution:\n\nCargo.toml:\n```toml\n[package]\nname = \"parallel_nested_vectors\"\nversion = \"0.1.0\"\nedition = \"2021\"\n\n[dependencies]\nrayon = \"1.8.0\"\nrand = \"0.8.5\"\n```\n\nmain.rs:\n```rust\nuse rayon::prelude::*;\nuse rand::Rng;\n\n// Function to process each element\nfn process_element(x: &usize) -> String {\n    // Example processing: square the value and convert to string\n    let squared = x * x;\n    format!(\"{}²={}\", x, squared)\n}\n\nfn main() {\n    // Create a vector of vectors with random lengths\n    let mut rng = rand::thread_rng();\n    let a: Vec<Vec<usize>> = (0..5)\n        .map(|_| {\n            (0..rng.gen_range(2..6))\n                .map(|_| rng.gen_range(1..11))\n                .collect()\n        })\n        .collect();\n\n    println!(\"Original structure:\");\n    for (i, inner) in a.iter().enumerate() {\n        println!(\"Vector {}: {:?}\", i, inner);\n    }\n\n    // Parallel processing while preserving structure\n    let c: Vec<Vec<String>> = a\n        .par_iter()          // Process outer vec in parallel\n        .map(|inner_vec| {\n            inner_vec\n                .par_iter()  // Process inner vec in parallel\n                .map(process_element)\n                .collect()\n        })\n        .collect();\n\n    println!(\"\\nProcessed structure:\");\n    for (i, inner) in c.iter().enumerate() {\n        println!(\"Vector {}: {:?}\", i, inner);\n    }\n}\n```\n\nThis solution:\n1. Uses Rayon's parallel iterators for both outer and inner vectors\n2. Preserves the original nested structure\n3. Includes random data generation for testing\n4. Demonstrates element processing with a sample function\n5. Maintains order of elements and vectors\n\nTo test:\n1. Create new project: `cargo new parallel_vecs`\n2. Replace Cargo.toml and main.rs with above contents\n3. Run: `cargo run`\n\nSample output will show:\n- Original nested vectors with random lengths/values\n- Processed nested vectors showing squared values as strings\n- Same structure preserved with different content"
-    # save_parsed_files_from_jsonl_line(text)
-    path = "/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_unsure_output_20260216_143523.jsonl"
-    # save_missing_file_samples(path)
-    
-    # Adjust num_workers based on your CPU cores. 
-    # Since 'cargo check' is IO/Subprocess heavy, you can often saturation CPU count or go slightly higher.
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Run cargo check on LLM-generated Rust code')
+    parser.add_argument('input', help='Input JSONL file with LLM responses')
+    parser.add_argument('--offline', action='store_true', help='Use offline mode for cargo')
+    parser.add_argument('--timeout', type=int, default=360, help='Timeout per sample in seconds (default: 360)')
+    parser.add_argument('--workers', type=int, default=None, help='Number of parallel workers (default: CPU count)')
+
+    args = parser.parse_args()
+
     report = evaluate_jsonl_parallel(
-        path, 
-        offline=False, 
-        timeout_s=360, 
-        num_workers=32  # Example: set explicitly or leave None for os.cpu_count()
+        args.input,
+        offline=args.offline,
+        timeout_s=args.timeout,
+        num_workers=args.workers
     )
-    
+
     print(json.dumps(report["totals"], indent=2))
 
-    out_path = path + ".cargo_check_report.json"
+    out_path = args.input + ".cargo_check_report.json"
     with open(out_path, "w", encoding="utf-8") as w:
         json.dump(report, w, ensure_ascii=False, indent=2)
     print("wrote:", out_path)

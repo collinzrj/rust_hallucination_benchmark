@@ -23,18 +23,12 @@ When generating code, LLMs sometimes "hallucinate" - they invent APIs, methods, 
 
 | Model | Method Hallucination | Import Hallucination | Feature Hallucination | Any Hallucination |
 |-------|---------------------|---------------------|----------------------|-------------------|
-| gpt-5.2-2025-12-11 | 4/69 (5.80%) | 6/69 (8.70%) | 2/69 (2.90%) | 12/69 (17.39%) |
-| qwen3-coder-30b-a3b-instruct | 8/69 (11.59%) | 10/69 (14.49%) | 1/69 (1.45%) | 16/69 (23.19%) |
-| qwen3-max-2026-01-23 | 8/69 (11.59%) | 14/69 (20.29%) | 3/69 (4.35%) | 22/69 (31.88%) |
-| gpt-5.2-codex | 8/68 (11.76%) | 7/68 (10.29%) | 4/68 (5.88%) | 17/68 (25.00%) |
-| google/gemini-3-pro-preview | 6/69 (8.70%) | 7/69 (10.14%) | 4/69 (5.80%) | 16/69 (23.19%) |
 | openai/gpt-5.2 | 25/345 (7.25%) | 31/345 (8.99%) | 14/345 (4.06%) | 68/345 (19.71%) |
-| qwen3-max-2026-01-23 | 39/345 (11.30%) | 61/345 (17.68%) | 13/345 (3.77%) | 99/345 (28.70%) |
 | anthropic/claude-opus-4.6 | 16/345 (4.64%) | 65/345 (18.84%) | 6/345 (1.74%) | 80/345 (23.19%) |
 | z-ai/glm-5 | 28/345 (8.12%) | 61/345 (17.68%) | 7/345 (2.03%) | 85/345 (24.64%) |
 | deepseek/deepseek-r1 | 43/345 (12.46%) | 62/345 (17.97%) | 32/345 (9.28%) | 123/345 (35.65%) |
+| qwen3-max-2026-01-23 | 39/345 (11.30%) | 61/345 (17.68%) | 13/345 (3.77%) | 99/345 (28.70%) |
 | qwen/qwen3.5-plus-02-15 | 39/345 (11.30%) | 61/345 (17.68%) | 10/345 (2.90%) | 93/345 (26.96%) |
-| qwen3.5-plus | 45/345 (13.04%) | 58/345 (16.81%) | 6/345 (1.74%) | 94/345 (27.25%) |
 
 ## Pipeline
 
@@ -55,6 +49,49 @@ When generating code, LLMs sometimes "hallucinate" - they invent APIs, methods, 
                         │  LLM Response        │
                         │  (concurrent_api)    │
                         └──────────────────────┘
+```
+
+## Provided Data
+
+We provide pre-processed data so you can skip steps and directly evaluate your models:
+
+| File | Description |
+|------|-------------|
+| `data/rust_questions.jsonl` | Raw Stack Overflow questions (500 questions) |
+| `data/formatted_questions_output_20260206_153818.jsonl` | Questions formatted with grading prompts |
+| `data/rust_hallucination_questions.jsonl` | **Final benchmark dataset** (69 filtered questions) |
+
+### LLM Responses & Analysis Results
+
+We include responses from multiple models with their cargo check reports and hallucination analysis:
+
+```
+data/rust_hallucination_questions_output_*.jsonl           # LLM responses
+data/rust_hallucination_questions_output_*.jsonl.cargo_check_report.json     # Cargo check results
+data/rust_hallucination_questions_output_*.jsonl.hallucination_analysis.json  # Hallucination analysis
+```
+
+### Quick Start: Using Provided Data
+
+To evaluate a new model on our benchmark:
+
+```bash
+# Generate responses for your model
+python concurrent_api_calls.py \
+    --model your-model-name \
+    --base-url https://your-api-endpoint \
+    --input data/rust_hallucination_questions.jsonl \
+    --output data/your_model_responses.jsonl
+
+# Run cargo check
+python grade.py data/your_model_responses.jsonl
+
+# Analyze hallucinations
+python analyze_hallucinations.py data/your_model_responses.jsonl.cargo_check_report.json
+
+# Compare with existing results
+# Add your analysis file path to utils/compare_hallu.py
+python utils/compare_hallu.py
 ```
 
 ## Installation
@@ -80,7 +117,7 @@ conda activate code_hallucination
 pip install requests json-repair tqdm openai
 ```
 
-## Usage
+## Full Pipeline: Recreating the Benchmark
 
 ### Step 1: Collect Questions from Stack Overflow
 
@@ -152,41 +189,42 @@ python concurrent_api_calls.py \
 Verify generated code with `cargo check`:
 
 ```bash
-python grade.py
+python grade.py data/your_model_responses.jsonl [--offline] [--timeout 360] [--workers 32]
 ```
 
-Edit the script to point to your response file:
-```python
-path = "data/responses.jsonl"
-report = evaluate_jsonl_parallel(
-    path,
-    offline=False,  # Set to True if dependencies are cached
-    timeout_s=360,
-    num_workers=32
-)
-```
+**Arguments:**
+- `input` - Input JSONL file with LLM responses (required)
+- `--offline` - Use offline mode for cargo (use cached dependencies)
+- `--timeout` - Timeout per sample in seconds (default: 360)
+- `--workers` - Number of parallel workers (default: CPU count)
 
-This creates `responses.jsonl.cargo_check_report.json`.
+This creates `data/your_model_responses.jsonl.cargo_check_report.json`.
 
 ### Step 6: Analyze Hallucinations
 
 Analyze cargo check errors to identify hallucinated APIs:
 
 ```bash
-python analyze_hallucinations.py data/responses.jsonl.cargo_check_report.json
+python analyze_hallucinations.py data/your_model_responses.jsonl.cargo_check_report.json
 ```
 
-This creates `responses.jsonl.hallucination_analysis.json` with detailed hallucination statistics.
+This creates `your_model_responses.jsonl.hallucination_analysis.json` with detailed hallucination statistics.
 
 ### Step 7: Compare Results
 
-Compare hallucination rates across models:
+Compare hallucination rates across models by adding your analysis file to `utils/compare_hallu.py`:
+
+```python
+paths = """
+data/your_model_responses.jsonl.hallucination_analysis.json
+""".split("\n")
+```
+
+Then run:
 
 ```bash
 python utils/compare_hallu.py
 ```
-
-Edit the `paths` variable in the script to point to your analysis files.
 
 ## Project Structure
 
@@ -202,11 +240,13 @@ Edit the `paths` variable in the script to point to your analysis files.
 ├── utils/
 │   ├── compare_hallu.py       # Compare hallucination rates across models
 │   └── search_code.py
-└── data/                      # Data files (git-ignored)
-    ├── rust_questions.jsonl
-    ├── formatted_questions.jsonl
-    ├── rust_hallucination_questions.jsonl
-    └── *.jsonl.cargo_check_report.json
+└── data/
+    ├── rust_questions.jsonl                        # Raw Stack Overflow questions
+    ├── formatted_questions_output_*.jsonl          # Graded questions
+    ├── rust_hallucination_questions.jsonl          # Final benchmark (69 questions)
+    ├── rust_hallucination_questions_output_*.jsonl # LLM responses
+    ├── *_output_*.jsonl.cargo_check_report.json    # Cargo check results
+    └── *_output_*.jsonl.hallucination_analysis.json # Hallucination analysis
 ```
 
 ## Hallucination Detection Logic
@@ -232,18 +272,6 @@ To evaluate a new model:
 2. Run `grade.py` on the output
 3. Run `analyze_hallucinations.py` on the cargo check report
 4. Add the analysis file path to `utils/compare_hallu.py`
-
-## Citation
-
-If you use this benchmark, please cite:
-
-```bibtex
-@misc{rust-hallucination-benchmark,
-  title={Rust Code Hallucination Benchmark},
-  author={Your Name},
-  year={2025}
-}
-```
 
 ## License
 
