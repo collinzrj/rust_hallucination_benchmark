@@ -1,13 +1,13 @@
 {
   "summary": {
     "total_samples": 345,
-    "compile_fail_samples": 220,
-    "samples_with_hallucinations": 85,
-    "hallucination_rate": 0.2463768115942029,
+    "compile_fail_samples": 223,
+    "samples_with_hallucinations": 88,
+    "hallucination_rate": 0.25507246376811593,
     "hallucination_type_distribution": {
       "feature": 7,
-      "import": 61,
-      "method": 28
+      "import": 62,
+      "method": 31
     },
     "top_hallucinated_methods": {
       "inspect": 9,
@@ -31,11 +31,11 @@
       "len": 1
     },
     "top_hallucinated_types": {
+      "PlSmallStr": 10,
       "NodeType": 7,
       "T": 6,
       "Op": 6,
       "extra": 6,
-      "PlSmallStr": 5,
       "tokio_stream::wrappers::BroadcastStream": 3,
       "rxrust::scheduler::CurrentThread": 3,
       "http_body": 3,
@@ -82,13 +82,13 @@
     },
     "wrong_signature_count": 0,
     "top_error_codes": {
-      "E0599": 115,
-      "E0277": 105,
+      "E0599": 118,
+      "E0277": 107,
       "null": 73,
-      "E0433": 57,
+      "E0433": 62,
       "E0425": 51,
       "E0107": 44,
-      "E0282": 36,
+      "E0282": 38,
       "E0432": 33,
       "cargo-build-failure": 29,
       "E0308": 28,
@@ -535,7 +535,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `tokio_broadcast_shutdown v0.1.0 (/tmp/tmpeit7f5f8)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `tokio_broadcast_shutdown` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `tokio_broadcast_shutdown v0.1.0 (/tmp/tmptbdo3nfi)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `tokio_broadcast_shutdown` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -879,10 +879,21 @@
     },
     {
       "index": 41,
-      "status": "timeout",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `new` found for struct `ChunkedArray<T>` in the current scope",
+          "code_line": "                            let struct_ca = StructChunked::new(",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
         "types": [],
@@ -891,7 +902,10 @@
         "traits": []
       },
       "wrong_signatures": [],
-      "error_codes": []
+      "error_codes": [
+        "E0599",
+        "E0282"
+      ]
     },
     {
       "index": 42,
@@ -939,7 +953,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `datadog-socket-test v0.1.0 (/tmp/tmpoxc_a4n7)`\nversions that meet the requirements `^0.29` are: 0.29.1, 0.29.0\n\npackage `datadog-socket-test` depends on `cadence` with feature `crossbeam` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `datadog-socket-test v0.1.0 (/tmp/tmp0hyk53xs)`\nversions that meet the requirements `^0.29` are: 0.29.1, 0.29.0\n\npackage `datadog-socket-test` depends on `cadence` with feature `crossbeam` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1056,7 +1070,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `kitty_shm_animation v0.1.0 (/tmp/tmpv1xgoaa1)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `kitty_shm_animation` depends on `nix` with feature `unistd` but `nix` does not have that feature.\n\n\nfailed to select a version for `nix` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `kitty_shm_animation v0.1.0 (/tmp/tmpd73murop)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `kitty_shm_animation` depends on `nix` with feature `unistd` but `nix` does not have that feature.\n\n\nfailed to select a version for `nix` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -2853,19 +2867,89 @@
     },
     {
       "index": 119,
-      "status": "timeout",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import",
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                            let s1 = Series::new(PlSmallStr::from_str(\"c1\"), c1_data);",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                            let s2 = Series::new(PlSmallStr::from_str(\"c2\"), c2_data);",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `from_series` found for struct `polars::prelude::StructChunked` in the current scope",
+          "code_line": "                            let struct_ca = StructChunked::from_series(",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                                PlSmallStr::from_str(\"item\"), ",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        Field::new(PlSmallStr::from_str(\"c1\"), DataType::String),",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        Field::new(PlSmallStr::from_str(\"c2\"), DataType::String),",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
-        "types": [],
+        "types": [
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr"
+        ],
         "crates": [],
         "features": [],
         "traits": []
       },
       "wrong_signatures": [],
-      "error_codes": []
+      "error_codes": [
+        "E0433",
+        "E0433",
+        "E0599",
+        "E0433",
+        "E0282",
+        "E0433",
+        "E0433"
+      ]
     },
     {
       "index": 120,
@@ -3696,7 +3780,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `pty_interactive_fix v0.1.0 (/tmp/tmp67vf7ctp)`\nversions that meet the requirements `^0.26` are: 0.26.4, 0.26.2, 0.26.1, 0.26.0\n\npackage `pty_interactive_fix` depends on `nix` with feature `unistd` but `nix` does not have that feature.\n\n\nfailed to select a version for `nix` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `pty_interactive_fix v0.1.0 (/tmp/tmpc3lk93iw)`\nversions that meet the requirements `^0.26` are: 0.26.4, 0.26.2, 0.26.1, 0.26.0\n\npackage `pty_interactive_fix` depends on `nix` with feature `unistd` but `nix` does not have that feature.\n\n\nfailed to select a version for `nix` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -4859,10 +4943,21 @@
     },
     {
       "index": 205,
-      "status": "timeout",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "status": "compile_fail",
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `new` found for struct `ChunkedArray<T>` in the current scope",
+          "code_line": "                            let struct_ca = StructChunked::new(PlSmallStr::from_static(\"item\"), &[c1, c2])",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
         "types": [],
@@ -4871,7 +4966,11 @@
         "traits": []
       },
       "wrong_signatures": [],
-      "error_codes": []
+      "error_codes": [
+        "E0277",
+        "E0277",
+        "E0599"
+      ]
     },
     {
       "index": 206,
@@ -5747,7 +5846,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `broadcast_shutdown v0.1.0 (/tmp/tmpvnl5k6ic)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `broadcast_shutdown` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `broadcast_shutdown v0.1.0 (/tmp/tmpec0hmgxg)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `broadcast_shutdown` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -7524,7 +7623,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `tauri-pty-fix v0.1.0 (/tmp/tmpvoiwtw1d)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `tauri-pty-fix` depends on `nix` with feature `fcntl` but `nix` does not have that feature.\n package `nix` does have feature `acct`\n\n\nfailed to select a version for `nix` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `tauri-pty-fix v0.1.0 (/tmp/tmptzjsc1q1)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `tauri-pty-fix` depends on `nix` with feature `fcntl` but `nix` does not have that feature.\n package `nix` does have feature `acct`\n\n\nfailed to select a version for `nix` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8112,7 +8211,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `graceful_shutdown_example v0.1.0 (/tmp/tmp97te7yi2)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `graceful_shutdown_example` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `graceful_shutdown_example v0.1.0 (/tmp/tmplp5ep_21)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `graceful_shutdown_example` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"

@@ -98,12 +98,12 @@
     "wrong_signature_count": 0,
     "top_error_codes": {
       "E0599": 102,
-      "E0277": 101,
+      "E0277": 98,
       "cargo-build-failure": 82,
       "null": 48,
       "E0425": 47,
       "E0433": 44,
-      "E0308": 38,
+      "E0308": 37,
       "E0432": 36,
       "E0282": 31,
       "E0061": 25,
@@ -373,7 +373,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `dogstatsd_test v0.1.0 (/tmp/tmpm5phuh86)`\nversions that meet the requirements `^0.25` are: 0.25.0\n\npackage `dogstatsd_test` depends on `cadence` with feature `unix` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `dogstatsd_test v0.1.0 (/tmp/tmp1125wg9p)`\nversions that meet the requirements `^0.25` are: 0.25.0\n\npackage `dogstatsd_test` depends on `cadence` with feature `unix` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -564,7 +564,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic-replacement-example v0.1.0 (/tmp/tmpa00a_f4t)`\nversions that meet the requirements `^1.1` are: 1.2.0\n\npackage `atomic-replacement-example` depends on `critical-section` with feature `spinlock-sync` but `critical-section` does not have that feature.\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic-replacement-example v0.1.0 (/tmp/tmp85_690yy)`\nversions that meet the requirements `^1.1` are: 1.2.0\n\npackage `atomic-replacement-example` depends on `critical-section` with feature `spinlock-sync` but `critical-section` does not have that feature.\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -619,10 +619,6 @@
       "wrong_signatures": [],
       "error_codes": [
         "E0277",
-        "E0277",
-        "E0277",
-        "E0277",
-        "E0308",
         "E0277",
         "E0308",
         "E0277",
@@ -1259,7 +1255,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `hyper`.\n    ... required by package `hyper-file-server v0.1.0 (/tmp/tmpl7m0z0m5)`\nversions that meet the requirements `^1.0` are: 1.8.1, 1.8.0, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.1, 1.0.0\n\npackage `hyper-file-server` depends on `hyper` with feature `tcp` but `hyper` does not have that feature.\n package `hyper` does have feature `ffi`\n\n\nfailed to select a version for `hyper` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `hyper`.\n    ... required by package `hyper-file-server v0.1.0 (/tmp/tmp2ocq_zr9)`\nversions that meet the requirements `^1.0` are: 1.8.1, 1.8.0, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.1, 1.0.0\n\npackage `hyper-file-server` depends on `hyper` with feature `tcp` but `hyper` does not have that feature.\n package `hyper` does have feature `ffi`\n\n\nfailed to select a version for `hyper` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1356,7 +1352,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `graceful_shutdown_example v0.1.0 (/tmp/tmpwa2tsd8e)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `graceful_shutdown_example` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `graceful_shutdown_example v0.1.0 (/tmp/tmp5volstbz)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `graceful_shutdown_example` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1664,7 +1660,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic_replace v0.1.0 (/tmp/tmpn7ejtd02)`\nversions that meet the requirements `^1.1.1` are: 1.2.0\n\npackage `atomic_replace` depends on `critical-section` with feature `cortex-m` but `critical-section` does not have that feature.\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic_replace v0.1.0 (/tmp/tmpkcm6si72)`\nversions that meet the requirements `^1.1.1` are: 1.2.0\n\npackage `atomic_replace` depends on `critical-section` with feature `cortex-m` but `critical-section` does not have that feature.\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1866,7 +1862,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `axum`.\n    ... required by package `axum_websocket_origin v0.1.0 (/tmp/tmp6qaof9kl)`\nversions that meet the requirements `^0.7` are: 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `axum_websocket_origin` depends on `axum` with feature `headers` but `axum` does not have that feature.\n\n\nfailed to select a version for `axum` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `axum`.\n    ... required by package `axum_websocket_origin v0.1.0 (/tmp/tmpyxnwtqad)`\nversions that meet the requirements `^0.7` are: 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `axum_websocket_origin` depends on `axum` with feature `headers` but `axum` does not have that feature.\n\n\nfailed to select a version for `axum` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1897,7 +1893,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `my_actix_app v0.1.0 (/tmp/tmp16tzhjhp)`\nversions that meet the requirements `^0.7.10` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10\n\npackage `my_actix_app` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `my_actix_app v0.1.0 (/tmp/tmp6ayjz2qn)`\nversions that meet the requirements `^0.7.10` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10\n\npackage `my_actix_app` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1928,7 +1924,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `hyper`.\n    ... required by package `streaming-file-server v0.1.0 (/tmp/tmp3bd5wyqn)`\nversions that meet the requirements `^1.0.0` are: 1.8.1, 1.8.0, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.1, 1.0.0\n\npackage `streaming-file-server` depends on `hyper` with feature `tcp` but `hyper` does not have that feature.\n package `hyper` does have feature `ffi`\n\n\nfailed to select a version for `hyper` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `hyper`.\n    ... required by package `streaming-file-server v0.1.0 (/tmp/tmpuv5qdizh)`\nversions that meet the requirements `^1.0.0` are: 1.8.1, 1.8.0, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.1, 1.0.0\n\npackage `streaming-file-server` depends on `hyper` with feature `tcp` but `hyper` does not have that feature.\n package `hyper` does have feature `ffi`\n\n\nfailed to select a version for `hyper` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -2111,7 +2107,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level v0.1.0 (/tmp/tmp3yt6st_6)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level` depends on `tracing-subscriber` with feature `filter` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level v0.1.0 (/tmp/tmp_lergyhp)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level` depends on `tracing-subscriber` with feature `filter` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -2423,7 +2419,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_struct v0.1.0 (/tmp/tmpa1e991ku)`\nversions that meet the requirements `^0.36.2` are: 0.36.2\n\npackage `polars_list_struct` depends on `polars` with feature `list` but `polars` does not have that feature.\n package `polars` does have feature `hist`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_struct v0.1.0 (/tmp/tmps3km44w5)`\nversions that meet the requirements `^0.36.2` are: 0.36.2\n\npackage `polars_list_struct` depends on `polars` with feature `list` but `polars` does not have that feature.\n package `polars` does have feature `hist`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -3070,7 +3066,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `datadog_metrics_test v0.1.0 (/tmp/tmpbsd37q_o)`\nversions that meet the requirements `^0.29` are: 0.29.1, 0.29.0\n\npackage `datadog_metrics_test` depends on `cadence` with feature `unix` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `datadog_metrics_test v0.1.0 (/tmp/tmpy9l46ih2)`\nversions that meet the requirements `^0.29` are: 0.29.1, 0.29.0\n\npackage `datadog_metrics_test` depends on `cadence` with feature `unix` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -3297,7 +3293,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `tracing-rehydrate v0.1.0 (/tmp/tmp6taxlz10)`\nversions that meet the requirements `^0.22.0` are: 0.22.0\n\npackage `tracing-rehydrate` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `tracing-rehydrate v0.1.0 (/tmp/tmpzrwiv57g)`\nversions that meet the requirements `^0.22.0` are: 0.22.0\n\npackage `tracing-rehydrate` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -3328,7 +3324,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tauri`.\n    ... required by package `tauri_pty_example v0.1.0 (/tmp/tmp4xfe3_nt)`\nversions that meet the requirements `^2.0.0-beta.20` are: 2.10.2, 2.10.1, 2.10.0, 2.9.5, 2.9.4, 2.9.3, 2.9.2, 2.9.1, 2.9.0, 2.8.5, 2.8.4, 2.8.3, 2.8.2, 2.8.1, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.1, 2.5.0, 2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.1, 2.1.0, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0, 2.0.0-rc.17, 2.0.0-rc.16, 2.0.0-rc.15, 2.0.0-rc.14, 2.0.0-rc.13, 2.0.0-rc.12, 2.0.0-rc.11, 2.0.0-rc.10, 2.0.0-rc.9, 2.0.0-rc.8, 2.0.0-rc.7, 2.0.0-rc.6, 2.0.0-rc.5, 2.0.0-rc.4, 2.0.0-rc.3, 2.0.0-rc.2, 2.0.0-rc.1, 2.0.0-rc.0, 2.0.0-beta.25, 2.0.0-beta.24, 2.0.0-beta.23, 2.0.0-beta.22, 2.0.0-beta.21, 2.0.0-beta.20\n\npackage `tauri_pty_example` depends on `tauri` with feature `api-all` but `tauri` does not have that feature.\n\n\nfailed to select a version for `tauri` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tauri`.\n    ... required by package `tauri_pty_example v0.1.0 (/tmp/tmprgyfomr2)`\nversions that meet the requirements `^2.0.0-beta.20` are: 2.10.2, 2.10.1, 2.10.0, 2.9.5, 2.9.4, 2.9.3, 2.9.2, 2.9.1, 2.9.0, 2.8.5, 2.8.4, 2.8.3, 2.8.2, 2.8.1, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.1, 2.5.0, 2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.1, 2.1.0, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0, 2.0.0-rc.17, 2.0.0-rc.16, 2.0.0-rc.15, 2.0.0-rc.14, 2.0.0-rc.13, 2.0.0-rc.12, 2.0.0-rc.11, 2.0.0-rc.10, 2.0.0-rc.9, 2.0.0-rc.8, 2.0.0-rc.7, 2.0.0-rc.6, 2.0.0-rc.5, 2.0.0-rc.4, 2.0.0-rc.3, 2.0.0-rc.2, 2.0.0-rc.1, 2.0.0-rc.0, 2.0.0-beta.25, 2.0.0-beta.24, 2.0.0-beta.23, 2.0.0-beta.22, 2.0.0-beta.21, 2.0.0-beta.20\n\npackage `tauri_pty_example` depends on `tauri` with feature `api-all` but `tauri` does not have that feature.\n\n\nfailed to select a version for `tauri` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -5052,7 +5048,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket_websocket_test v0.1.0 (/tmp/tmpdkbt7t84)`\nversions that meet the requirements `^0.5.0-rc.3` are: 0.5.1, 0.5.0, 0.5.0-rc.4, 0.5.0-rc.3\n\npackage `rocket_websocket_test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket_websocket_test v0.1.0 (/tmp/tmp_5_5grcv)`\nversions that meet the requirements `^0.5.0-rc.3` are: 0.5.1, 0.5.0, 0.5.0-rc.4, 0.5.0-rc.3\n\npackage `rocket_websocket_test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -5119,7 +5115,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level v0.1.0 (/tmp/tmpiqkj9wlv)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level v0.1.0 (/tmp/tmpm_jvzcwe)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -5261,7 +5257,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `span-rehydration-example v0.1.0 (/tmp/tmpxpo_mogv)`\nversions that meet the requirements `^0.22` are: 0.22.0\n\npackage `span-rehydration-example` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `span-rehydration-example v0.1.0 (/tmp/tmpm9c9w_u5)`\nversions that meet the requirements `^0.22` are: 0.22.0\n\npackage `span-rehydration-example` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -5973,7 +5969,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_struct_list v0.1.0 (/tmp/tmpux9vvu4_)`\nversions that meet the requirements `^0.36.2` are: 0.36.2\n\npackage `polars_struct_list` depends on `polars` with feature `list` but `polars` does not have that feature.\n package `polars` does have feature `hist`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_struct_list v0.1.0 (/tmp/tmp5zrfansk)`\nversions that meet the requirements `^0.36.2` are: 0.36.2\n\npackage `polars_struct_list` depends on `polars` with feature `list` but `polars` does not have that feature.\n package `polars` does have feature `hist`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6071,7 +6067,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `smb`.\n    ... required by package `smb_recursive_list v0.1.0 (/tmp/tmp7k_tplko)`\nversions that meet the requirements `^0.3` are: 0.3.0\n\npackage `smb_recursive_list` depends on `smb` with feature `tokio` but `smb` does not have that feature.\n An optional dependency with that name exists, but that dependency uses the \"dep:\" syntax in the features table, so it does not have an implicit feature with that name.\n\n\nfailed to select a version for `smb` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `smb`.\n    ... required by package `smb_recursive_list v0.1.0 (/tmp/tmpwzib1bk5)`\nversions that meet the requirements `^0.3` are: 0.3.0\n\npackage `smb_recursive_list` depends on `smb` with feature `tokio` but `smb` does not have that feature.\n An optional dependency with that name exists, but that dependency uses the \"dep:\" syntax in the features table, so it does not have an implicit feature with that name.\n\n\nfailed to select a version for `smb` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6120,7 +6116,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket_websocket_test v0.1.0 (/tmp/tmpv02yhouh)`\nversions that meet the requirements `^0.5.0-rc.3` are: 0.5.1, 0.5.0, 0.5.0-rc.4, 0.5.0-rc.3\n\npackage `rocket_websocket_test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket_websocket_test v0.1.0 (/tmp/tmpn1u8uyc4)`\nversions that meet the requirements `^0.5.0-rc.3` are: 0.5.1, 0.5.0, 0.5.0-rc.4, 0.5.0-rc.3\n\npackage `rocket_websocket_test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6167,7 +6163,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `rustyline`.\n    ... required by package `repl_host v0.1.0 (/tmp/tmprs6n1wqz)`\nversions that meet the requirements `^12.0.0` are: 12.0.0\n\npackage `repl_host` depends on `rustyline` with feature `with-async` but `rustyline` does not have that feature.\n\n\nfailed to select a version for `rustyline` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `rustyline`.\n    ... required by package `repl_host v0.1.0 (/tmp/tmpicxnw7ow)`\nversions that meet the requirements `^12.0.0` are: 12.0.0\n\npackage `repl_host` depends on `rustyline` with feature `with-async` but `rustyline` does not have that feature.\n\n\nfailed to select a version for `rustyline` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6639,7 +6635,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `hyper`.\n    ... required by package `file-server v0.1.0 (/tmp/tmpyj9jystw)`\nversions that meet the requirements `^1.0` are: 1.8.1, 1.8.0, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.1, 1.0.0\n\npackage `file-server` depends on `hyper` with feature `tcp` but `hyper` does not have that feature.\n package `hyper` does have feature `ffi`\n\n\nfailed to select a version for `hyper` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `hyper`.\n    ... required by package `file-server v0.1.0 (/tmp/tmpa3pfg1s7)`\nversions that meet the requirements `^1.0` are: 1.8.1, 1.8.0, 1.7.0, 1.6.0, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.1, 1.3.0, 1.2.0, 1.1.0, 1.0.1, 1.0.0\n\npackage `file-server` depends on `hyper` with feature `tcp` but `hyper` does not have that feature.\n package `hyper` does have feature `ffi`\n\n\nfailed to select a version for `hyper` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6816,7 +6812,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `axum`.\n    ... required by package `axum_websocket_origin_check v0.1.0 (/tmp/tmpd8mvedy2)`\nversions that meet the requirements `^0.6.20` are: 0.6.20\n\npackage `axum_websocket_origin_check` depends on `axum` with feature `middleware` but `axum` does not have that feature.\n\n\nfailed to select a version for `axum` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `axum`.\n    ... required by package `axum_websocket_origin_check v0.1.0 (/tmp/tmpt_lax4sg)`\nversions that meet the requirements `^0.6.20` are: 0.6.20\n\npackage `axum_websocket_origin_check` depends on `axum` with feature `middleware` but `axum` does not have that feature.\n\n\nfailed to select a version for `axum` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6907,7 +6903,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `dogstatsd_test v0.1.0 (/tmp/tmp66_7gda6)`\nversions that meet the requirements `^0.26.0` are: 0.26.0\n\npackage `dogstatsd_test` depends on `cadence` with feature `unix` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `cadence`.\n    ... required by package `dogstatsd_test v0.1.0 (/tmp/tmppa2f20hw)`\nversions that meet the requirements `^0.26.0` are: 0.26.0\n\npackage `dogstatsd_test` depends on `cadence` with feature `unix` but `cadence` does not have that feature.\n\n\nfailed to select a version for `cadence` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -7022,7 +7018,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `span-rehydration-example v0.1.0 (/tmp/tmphu3uyiuh)`\nversions that meet the requirements `^0.22.0` are: 0.22.0\n\npackage `span-rehydration-example` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `span-rehydration-example v0.1.0 (/tmp/tmpiejfdxph)`\nversions that meet the requirements `^0.22.0` are: 0.22.0\n\npackage `span-rehydration-example` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -7515,7 +7511,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic-replace-example v0.1.0 (/tmp/tmp5ks1x0fq)`\nversions that meet the requirements `^1.1` are: 1.2.0\n\npackage `atomic-replace-example` depends on `critical-section` with feature `custom-impl` but `critical-section` does not have that feature.\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic-replace-example v0.1.0 (/tmp/tmphikufmlx)`\nversions that meet the requirements `^1.1` are: 1.2.0\n\npackage `atomic-replace-example` depends on `critical-section` with feature `custom-impl` but `critical-section` does not have that feature.\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8030,7 +8026,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tauri`.\n    ... required by package `tauri-expectrl-example v0.1.0 (/tmp/tmpdfi6xspd)`\nversions that meet the requirements `^2.0.0` are: 2.10.2, 2.10.1, 2.10.0, 2.9.5, 2.9.4, 2.9.3, 2.9.2, 2.9.1, 2.9.0, 2.8.5, 2.8.4, 2.8.3, 2.8.2, 2.8.1, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.1, 2.5.0, 2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.1, 2.1.0, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0\n\npackage `tauri-expectrl-example` depends on `tauri` with feature `api-all` but `tauri` does not have that feature.\n\n\nfailed to select a version for `tauri` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tauri`.\n    ... required by package `tauri-expectrl-example v0.1.0 (/tmp/tmplrh_j3b5)`\nversions that meet the requirements `^2.0.0` are: 2.10.2, 2.10.1, 2.10.0, 2.9.5, 2.9.4, 2.9.3, 2.9.2, 2.9.1, 2.9.0, 2.8.5, 2.8.4, 2.8.3, 2.8.2, 2.8.1, 2.8.0, 2.7.0, 2.6.2, 2.6.1, 2.6.0, 2.5.1, 2.5.0, 2.4.1, 2.4.0, 2.3.1, 2.3.0, 2.2.5, 2.2.4, 2.2.3, 2.2.2, 2.2.1, 2.2.0, 2.1.1, 2.1.0, 2.0.6, 2.0.5, 2.0.4, 2.0.3, 2.0.2, 2.0.1, 2.0.0\n\npackage `tauri-expectrl-example` depends on `tauri` with feature `api-all` but `tauri` does not have that feature.\n\n\nfailed to select a version for `tauri` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8199,7 +8195,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `graceful-shutdown-example v0.1.0 (/tmp/tmpipsek9iq)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `graceful-shutdown-example` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tokio-util`.\n    ... required by package `graceful-shutdown-example v0.1.0 (/tmp/tmp4occr2b3)`\nversions that meet the requirements `^0.7` are: 0.7.18, 0.7.17, 0.7.16, 0.7.15, 0.7.14, 0.7.13, 0.7.12, 0.7.11, 0.7.10, 0.7.9, 0.7.8, 0.7.7, 0.7.6, 0.7.5, 0.7.4, 0.7.3, 0.7.2, 0.7.1, 0.7.0\n\npackage `graceful-shutdown-example` depends on `tokio-util` with feature `sync` but `tokio-util` does not have that feature.\n package `tokio-util` does have feature `slab`\n\n\nfailed to select a version for `tokio-util` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8230,7 +8226,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_struct_list v0.1.0 (/tmp/tmpmes5g_fj)`\nversions that meet the requirements `^0.25` are: 0.25.1, 0.25.0\n\npackage `polars_struct_list` depends on `polars` with feature `list` but `polars` does not have that feature.\n package `polars` does have feature `test`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_struct_list v0.1.0 (/tmp/tmpfl6z34v8)`\nversions that meet the requirements `^0.25` are: 0.25.1, 0.25.0\n\npackage `polars_struct_list` depends on `polars` with feature `list` but `polars` does not have that feature.\n package `polars` does have feature `test`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8495,7 +8491,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `bevy_mod_picking`.\n    ... required by package `gizmo_rotation_demo v0.1.0 (/tmp/tmpa63p80wq)`\nversions that meet the requirements `^0.14` are: 0.14.0\n\npackage `gizmo_rotation_demo` depends on `bevy_mod_picking` with feature `raycast` but `bevy_mod_picking` does not have that feature.\n\n\nfailed to select a version for `bevy_mod_picking` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `bevy_mod_picking`.\n    ... required by package `gizmo_rotation_demo v0.1.0 (/tmp/tmpbi6cwra1)`\nversions that meet the requirements `^0.14` are: 0.14.0\n\npackage `gizmo_rotation_demo` depends on `bevy_mod_picking` with feature `raycast` but `bevy_mod_picking` does not have that feature.\n\n\nfailed to select a version for `bevy_mod_picking` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8942,7 +8938,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `span-rehydration-example v0.1.0 (/tmp/tmp0a28y0z7)`\nversions that meet the requirements `^0.22.0` are: 0.22.0\n\npackage `span-rehydration-example` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `opentelemetry`.\n    ... required by package `span-rehydration-example v0.1.0 (/tmp/tmpwrev6p2e)`\nversions that meet the requirements `^0.22.0` are: 0.22.0\n\npackage `span-rehydration-example` depends on `opentelemetry` with feature `rt-tokio` but `opentelemetry` does not have that feature.\n\n\nfailed to select a version for `opentelemetry` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8973,7 +8969,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `rustyline`.\n    ... required by package `repl-host v0.1.0 (/tmp/tmpuix443m2)`\nversions that meet the requirements `^12.0.0` are: 12.0.0\n\npackage `repl-host` depends on `rustyline` with feature `with-tokio` but `rustyline` does not have that feature.\n\n\nfailed to select a version for `rustyline` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `rustyline`.\n    ... required by package `repl-host v0.1.0 (/tmp/tmp314bpx61)`\nversions that meet the requirements `^12.0.0` are: 12.0.0\n\npackage `repl-host` depends on `rustyline` with feature `with-tokio` but `rustyline` does not have that feature.\n\n\nfailed to select a version for `rustyline` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -9107,7 +9103,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket_websocket_test v0.1.0 (/tmp/tmphv1gwchw)`\nversions that meet the requirements `^0.5.0-rc.3` are: 0.5.1, 0.5.0, 0.5.0-rc.4, 0.5.0-rc.3\n\npackage `rocket_websocket_test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket_websocket_test v0.1.0 (/tmp/tmpqo673urj)`\nversions that meet the requirements `^0.5.0-rc.3` are: 0.5.1, 0.5.0, 0.5.0-rc.4, 0.5.0-rc.3\n\npackage `rocket_websocket_test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"

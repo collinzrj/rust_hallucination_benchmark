@@ -1,13 +1,13 @@
 {
   "summary": {
     "total_samples": 345,
-    "compile_fail_samples": 232,
-    "samples_with_hallucinations": 99,
-    "hallucination_rate": 0.28695652173913044,
+    "compile_fail_samples": 228,
+    "samples_with_hallucinations": 106,
+    "hallucination_rate": 0.3072463768115942,
     "hallucination_type_distribution": {
-      "feature": 13,
-      "method": 39,
-      "import": 61
+      "import": 66,
+      "method": 42,
+      "feature": 13
     },
     "top_hallucinated_methods": {
       "run": 10,
@@ -18,6 +18,9 @@
       "evolve": 2,
       "best": 2,
       "print_help": 1,
+      "set_helper": 1,
+      "bind_sequence": 1,
+      "readline": 1,
       "as_secs": 1,
       "subsec_millis": 1,
       "module_path": 1,
@@ -26,16 +29,17 @@
       "bind": 1,
       "open_directory": 1,
       "recv": 1,
-      "center_columns": 1,
-      "query": 1,
-      "send": 1,
-      "set_objective": 1
+      "center_columns": 1
     },
     "top_hallucinated_types": {
+      "PlSmallStr": 10,
       "tokio_stream::wrappers::BroadcastStream": 5,
       "Op": 5,
       "chrono": 3,
       "rustyline::conditional": 3,
+      "radiate::tree": 2,
+      "axum::async_trait": 2,
+      "futures_util": 2,
       "Rich": 2,
       "extra": 2,
       "rustyline::movement": 2,
@@ -46,34 +50,30 @@
       "dunce": 2,
       "rustyline::helper": 2,
       "serde_json": 2,
-      "tokio": 1,
-      "dioxus::events::UiPoint": 1,
-      "tracing": 1,
-      "http_body_util::Frame": 1,
-      "futures_util": 1,
-      "rustyline::edit::EditCommand": 1
+      "radiate::genetic": 1,
+      "radiate::selection": 1
     },
     "top_hallucinated_crates": {
       "rustyline": 16,
+      "radiate": 7,
       "tokio_stream": 5,
+      "axum": 4,
       "nix": 4,
       "chrono": 3,
-      "axum": 3,
+      "futures_util": 2,
       "extra": 2,
       "libc": 2,
       "dunce": 2,
       "smb": 2,
       "serde_json": 2,
+      "polars": 1,
       "tokio": 1,
       "dioxus": 1,
       "tracing": 1,
       "http_body_util": 1,
-      "futures_util": 1,
       "terminal_size": 1,
       "chumsky": 1,
-      "opentelemetry_sdk": 1,
-      "radiate": 1,
-      "azure_storage": 1
+      "opentelemetry_sdk": 1
     },
     "top_hallucinated_features": {
       "reload": 5,
@@ -85,26 +85,26 @@
     },
     "wrong_signature_count": 0,
     "top_error_codes": {
-      "E0599": 94,
-      "cargo-build-failure": 79,
-      "E0277": 56,
-      "E0282": 49,
-      "E0433": 45,
-      "E0432": 44,
-      "E0308": 36,
-      "null": 31,
-      "E0107": 29,
+      "E0599": 109,
+      "cargo-build-failure": 61,
+      "E0277": 60,
+      "E0433": 58,
+      "E0282": 54,
+      "E0432": 52,
+      "E0308": 39,
+      "E0107": 34,
+      "null": 32,
+      "E0061": 17,
       "E0425": 15,
-      "E0061": 13,
-      "E0603": 11,
+      "E0603": 13,
       "E0499": 8,
+      "E0046": 7,
       "E0596": 7,
-      "E0046": 6,
       "E0119": 5,
       "E0716": 5,
       "E0405": 4,
       "E0804": 4,
-      "E0004": 3
+      "E0609": 3
     }
   },
   "per_sample_analysis": [
@@ -129,19 +129,98 @@
     {
       "index": 2,
       "status": "compile_fail",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: could not find `tree` in `radiate`",
+          "code_line": "use radiate::tree::operation::{Op, Operation};",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0432",
+          "message": "unresolved import `radiate::tree`",
+          "code_line": "use radiate::tree::{NodeType, Tree};",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0432",
+          "message": "unresolved import `radiate::genetic`",
+          "code_line": "use radiate::genetic::{Genetic, Problem};",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0432",
+          "message": "unresolved import `radiate::selection`",
+          "code_line": "use radiate::selection::TournamentSelection;",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0432",
+          "message": "unresolved import `radiate::crossover`",
+          "code_line": "use radiate::crossover::SubtreeCrossover;",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0432",
+          "message": "unresolved import `radiate::mutation`",
+          "code_line": "use radiate::mutation::SubtreeMutation;",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0432",
+          "message": "unresolved import `radiate::stop`",
+          "code_line": "use radiate::stop::MaxGenerations;",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
-        "types": [],
-        "crates": [],
+        "types": [
+          "radiate::tree",
+          "radiate::genetic",
+          "radiate::selection",
+          "radiate::crossover",
+          "radiate::mutation",
+          "radiate::stop"
+        ],
+        "crates": [
+          "radiate",
+          "radiate",
+          "radiate",
+          "radiate",
+          "radiate",
+          "radiate"
+        ],
         "features": [],
         "traits": []
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0433",
+        "E0432",
+        "E0432",
+        "E0432",
+        "E0432",
+        "E0432",
+        "E0432"
       ]
     },
     {
@@ -214,27 +293,144 @@
     {
       "index": 7,
       "status": "compile_fail",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved import `polars::chunked_array::builder::ListChunkedBuilder`",
+          "code_line": "use polars::chunked_array::builder::ListChunkedBuilder;",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        Field::new(PlSmallStr::from(\"c1\"), DataType::String),",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        Field::new(PlSmallStr::from(\"c2\"), DataType::String),",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        PlSmallStr::from(\"output\"),",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                                let c1_series = Series::new(PlSmallStr::from(\"c1\"), c1_vals);",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                                let c2_series = Series::new(PlSmallStr::from(\"c2\"), c2_vals);",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                                    PlSmallStr::from(\"row_structs\"),",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        Field::new(PlSmallStr::from(\"c1\"), DataType::String),",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        Field::new(PlSmallStr::from(\"c2\"), DataType::String),",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of undeclared type `PlSmallStr`",
+          "code_line": "                        PlSmallStr::from(\"foo\"),",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
-        "types": [],
-        "crates": [],
+        "types": [
+          "polars::chunked_array::builder::ListChunkedBuilder",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr",
+          "PlSmallStr"
+        ],
+        "crates": [
+          "polars"
+        ],
         "features": [],
         "traits": []
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0432",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0433",
+        "E0308"
       ]
     },
     {
       "index": 8,
       "status": "compile_fail",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `new_with_client` found for struct `azure_storage_blobs::prelude::BlobServiceClient` in the current scope",
+          "code_line": "    let blob_service = BlobServiceClient::new_with_client(",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
         "types": [],
@@ -244,7 +440,12 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0603",
+        "E0609",
+        "E0061",
+        "E0277",
+        "E0061",
+        "E0599"
       ]
     },
     {
@@ -265,7 +466,7 @@
     },
     {
       "index": 10,
-      "status": "compile_fail",
+      "status": "ok",
       "has_hallucination": false,
       "hallucination_types": [],
       "hallucination_errors": [],
@@ -277,9 +478,7 @@
         "traits": []
       },
       "wrong_signatures": [],
-      "error_codes": [
-        "cargo-build-failure"
-      ]
+      "error_codes": []
     },
     {
       "index": 11,
@@ -296,7 +495,10 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0599",
+        "E0599",
+        "E0599",
+        "E0599"
       ]
     },
     {
@@ -329,7 +531,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmpl7bwur0t)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmpm3zxzk76)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -353,9 +555,20 @@
     {
       "index": 14,
       "status": "compile_fail",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "has_hallucination": true,
+      "hallucination_types": [
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0599",
+          "message": "no function or associated item named `with_helper` found for struct `Editor<H, I>` in the current scope",
+          "code_line": "    let mut rl = Editor::with_helper(Some(helper))?;",
+          "msg_hallucination_types": [
+            "method"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
         "types": [],
@@ -365,7 +578,9 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0046",
+        "E0599",
+        "E0282"
       ]
     },
     {
@@ -384,10 +599,6 @@
       "wrong_signatures": [],
       "error_codes": [
         "E0277",
-        "E0277",
-        "E0277",
-        "E0277",
-        "E0308",
         "E0277",
         "E0308",
         "E0277",
@@ -475,7 +686,7 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        null
       ]
     },
     {
@@ -527,7 +738,8 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0107",
+        "E0282"
       ]
     },
     {
@@ -566,7 +778,7 @@
     },
     {
       "index": 26,
-      "status": "compile_fail",
+      "status": "ok",
       "has_hallucination": false,
       "hallucination_types": [],
       "hallucination_errors": [],
@@ -578,9 +790,7 @@
         "traits": []
       },
       "wrong_signatures": [],
-      "error_codes": [
-        "cargo-build-failure"
-      ]
+      "error_codes": []
     },
     {
       "index": 27,
@@ -592,7 +802,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `tauri_pty_concurrency_example v0.1.0 (/tmp/tmpnuxa56za)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `tauri_pty_concurrency_example` depends on `nix` with feature `fcntl` but `nix` does not have that feature.\n package `nix` does have feature `acct`\n\n\nfailed to select a version for `nix` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `tauri_pty_concurrency_example v0.1.0 (/tmp/tmppfp17sfd)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `tauri_pty_concurrency_example` depends on `nix` with feature `fcntl` but `nix` does not have that feature.\n package `nix` does have feature `acct`\n\n\nfailed to select a version for `nix` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -616,37 +826,79 @@
     {
       "index": 28,
       "status": "compile_fail",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0432",
+          "message": "unresolved import `axum::async_trait`",
+          "code_line": "    async_trait,",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0433",
+          "message": "failed to resolve: could not find `Server` in `axum`",
+          "code_line": "    axum::Server::bind(&addr)",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
-        "types": [],
-        "crates": [],
+        "types": [
+          "axum::async_trait"
+        ],
+        "crates": [
+          "axum"
+        ],
         "features": [],
         "traits": []
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0432",
+        "E0433",
+        "E0282"
       ]
     },
     {
       "index": 29,
       "status": "compile_fail",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: use of unresolved module or unlinked crate `futures_util`",
+          "code_line": "use futures_util::future::LocalBoxFuture;",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        }
+      ],
       "hallucinated_items": {
         "methods": [],
-        "types": [],
-        "crates": [],
+        "types": [
+          "futures_util"
+        ],
+        "crates": [
+          "futures_util"
+        ],
         "features": [],
         "traits": []
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0433",
+        "E0599",
+        "E0599"
       ]
     },
     {
@@ -730,7 +982,11 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0603",
+        "E0391",
+        "E0271",
+        "E0277",
+        "E0391"
       ]
     },
     {
@@ -836,12 +1092,18 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0107",
+        "E0107",
+        "E0107",
+        "E0277",
+        "E0599",
+        "E0277",
+        "E0599"
       ]
     },
     {
       "index": 39,
-      "status": "compile_fail",
+      "status": "ok",
       "has_hallucination": false,
       "hallucination_types": [],
       "hallucination_errors": [],
@@ -853,9 +1115,7 @@
         "traits": []
       },
       "wrong_signatures": [],
-      "error_codes": [
-        "cargo-build-failure"
-      ]
+      "error_codes": []
     },
     {
       "index": 40,
@@ -877,7 +1137,7 @@
     },
     {
       "index": 41,
-      "status": "compile_fail",
+      "status": "ok",
       "has_hallucination": false,
       "hallucination_types": [],
       "hallucination_errors": [],
@@ -889,9 +1149,7 @@
         "traits": []
       },
       "wrong_signatures": [],
-      "error_codes": [
-        "cargo-build-failure"
-      ]
+      "error_codes": []
     },
     {
       "index": 42,
@@ -947,11 +1205,63 @@
     {
       "index": 44,
       "status": "compile_fail",
-      "has_hallucination": false,
-      "hallucination_types": [],
-      "hallucination_errors": [],
+      "has_hallucination": true,
+      "hallucination_types": [
+        "import",
+        "method"
+      ],
+      "hallucination_errors": [
+        {
+          "code": "E0433",
+          "message": "failed to resolve: could not find `KeyPress` in `rustyline`",
+          "code_line": "        rustyline::KeyPress::Tab,",
+          "msg_hallucination_types": [
+            "import"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no variant or associated item named `Macro` found for enum `Cmd` in the current scope",
+          "code_line": "                    return Some(Cmd::Macro(vec![",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `set_helper` found for enum `Result<T, E>` in the current scope",
+          "code_line": "    editor.set_helper(Some(helper));",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `bind_sequence` found for enum `Result<T, E>` in the current scope",
+          "code_line": "    editor.bind_sequence(",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        },
+        {
+          "code": "E0599",
+          "message": "no method named `readline` found for enum `Result<T, E>` in the current scope",
+          "code_line": "        match editor.readline(prompt) {",
+          "msg_hallucination_types": [
+            "import",
+            "method"
+          ]
+        }
+      ],
       "hallucinated_items": {
-        "methods": [],
+        "methods": [
+          "set_helper",
+          "bind_sequence",
+          "readline"
+        ],
         "types": [],
         "crates": [],
         "features": [],
@@ -959,7 +1269,20 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0433",
+        "E0277",
+        "E0599",
+        "E0061",
+        "E0061",
+        "E0599",
+        "E0599",
+        "E0599",
+        "E0277",
+        "E0308",
+        "E0277",
+        "E0308",
+        "E0599",
+        "E0282"
       ]
     },
     {
@@ -995,7 +1318,8 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0107",
+        "E0282"
       ]
     },
     {
@@ -1061,7 +1385,7 @@
       },
       "wrong_signatures": [],
       "error_codes": [
-        "cargo-build-failure"
+        "E0308"
       ]
     },
     {
@@ -1284,7 +1608,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmp7tj2uf_5)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmp7id2j2ts)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1349,7 +1673,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_of_structs_example v0.1.0 (/tmp/tmp7imt86cd)`\nversions that meet the requirements `^0.40` are: 0.40.0\n\npackage `polars_list_of_structs_example` depends on `polars` with feature `macros` but `polars` does not have that feature.\n package `polars` does have feature `avro`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_of_structs_example v0.1.0 (/tmp/tmp69ze991s)`\nversions that meet the requirements `^0.40` are: 0.40.0\n\npackage `polars_list_of_structs_example` depends on `polars` with feature `macros` but `polars` does not have that feature.\n package `polars` does have feature `avro`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -1854,7 +2178,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `azure_storage_blobs`.\n    ... required by package `azure_blob_downloader v0.1.0 (/tmp/tmpwcq28zhe)`\nversions that meet the requirements `^0.18.0` are: 0.18.0\n\npackage `azure_blob_downloader` depends on `azure_storage_blobs` with feature `reqwest` but `azure_storage_blobs` does not have that feature.\n\n\nfailed to select a version for `azure_storage_blobs` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `azure_storage_blobs`.\n    ... required by package `azure_blob_downloader v0.1.0 (/tmp/tmp689gh4x7)`\nversions that meet the requirements `^0.18.0` are: 0.18.0\n\npackage `azure_blob_downloader` depends on `azure_storage_blobs` with feature `reqwest` but `azure_storage_blobs` does not have that feature.\n\n\nfailed to select a version for `azure_storage_blobs` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -2855,7 +3179,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic-log-level-example v0.1.0 (/tmp/tmpug19r_wz)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic-log-level-example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic-log-level-example v0.1.0 (/tmp/tmp8sx1k587)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic-log-level-example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -4543,7 +4867,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket-websocket-test v0.1.0 (/tmp/tmpt27stjy3)`\nversions that meet the requirements `^0.5.0` are: 0.5.1, 0.5.0\n\npackage `rocket-websocket-test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `rocket`.\n    ... required by package `rocket-websocket-test v0.1.0 (/tmp/tmpx87w0uoz)`\nversions that meet the requirements `^0.5.0` are: 0.5.1, 0.5.0\n\npackage `rocket-websocket-test` depends on `rocket` with feature `ws` but `rocket` does not have that feature.\n package `rocket` does have feature `tls`\n\n\nfailed to select a version for `rocket` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -4660,7 +4984,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmpdo23_wtl)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmp_lgaamtr)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -4830,7 +5154,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic_replacement_example v0.1.0 (/tmp/tmp9qdhn4e5)`\nversions that meet the requirements `^1.1.1` are: 1.2.0\n\npackage `atomic_replacement_example` depends on `critical-section` with feature `spin` but `critical-section` does not have that feature.\n package `critical-section` does have feature `std`\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `critical-section`.\n    ... required by package `atomic_replacement_example v0.1.0 (/tmp/tmpdvusm7fs)`\nversions that meet the requirements `^1.1.1` are: 1.2.0\n\npackage `atomic_replacement_example` depends on `critical-section` with feature `spin` but `critical-section` does not have that feature.\n package `critical-section` does have feature `std`\n\n\nfailed to select a version for `critical-section` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -4861,7 +5185,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_of_structs_example v0.1.0 (/tmp/tmpj3bf33v5)`\nversions that meet the requirements `^0.38.0` are: 0.38.3, 0.38.2, 0.38.1, 0.38.0\n\npackage `polars_list_of_structs_example` depends on `polars` with feature `macros` but `polars` does not have that feature.\n package `polars` does have feature `avro`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_of_structs_example v0.1.0 (/tmp/tmpdq_u8ht0)`\nversions that meet the requirements `^0.38.0` are: 0.38.3, 0.38.2, 0.38.1, 0.38.0\n\npackage `polars_list_of_structs_example` depends on `polars` with feature `macros` but `polars` does not have that feature.\n package `polars` does have feature `avro`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6554,7 +6878,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmpua0f_i2u)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `tracing-subscriber`.\n    ... required by package `dynamic_log_level_example v0.1.0 (/tmp/tmpl2rjxrt_)`\nversions that meet the requirements `^0.3` are: 0.3.22, 0.3.20, 0.3.19, 0.3.18, 0.3.17, 0.3.16, 0.3.15, 0.3.14, 0.3.11, 0.3.10, 0.3.9, 0.3.8, 0.3.7, 0.3.6, 0.3.5, 0.3.4, 0.3.3, 0.3.2, 0.3.1, 0.3.0\n\npackage `dynamic_log_level_example` depends on `tracing-subscriber` with feature `reload` but `tracing-subscriber` does not have that feature.\n\n\nfailed to select a version for `tracing-subscriber` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -6601,7 +6925,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_of_structs_example v0.1.0 (/tmp/tmpl9yme8iz)`\nversions that meet the requirements `^0.38` are: 0.38.3, 0.38.2, 0.38.1, 0.38.0\n\npackage `polars_list_of_structs_example` depends on `polars` with feature `macros` but `polars` does not have that feature.\n package `polars` does have feature `avro`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `polars`.\n    ... required by package `polars_list_of_structs_example v0.1.0 (/tmp/tmpjfwuzjy9)`\nversions that meet the requirements `^0.38` are: 0.38.3, 0.38.2, 0.38.1, 0.38.0\n\npackage `polars_list_of_structs_example` depends on `polars` with feature `macros` but `polars` does not have that feature.\n package `polars` does have feature `avro`\n\n\nfailed to select a version for `polars` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"
@@ -8053,7 +8377,7 @@
       "hallucination_errors": [
         {
           "code": "cargo-build-failure",
-          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `kitty-shm-animation v0.1.0 (/tmp/tmp9inwirgc)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `kitty-shm-animation` depends on `nix` with feature `fcntl` but `nix` does not have that feature.\n package `nix` does have feature `acct`\n\n\nfailed to select a version for `nix` which could resolve this conflict",
+          "message": "Updating crates.io index\nerror: failed to select a version for `nix`.\n    ... required by package `kitty-shm-animation v0.1.0 (/tmp/tmpgkzehs3a)`\nversions that meet the requirements `^0.27` are: 0.27.1, 0.27.0\n\npackage `kitty-shm-animation` depends on `nix` with feature `fcntl` but `nix` does not have that feature.\n package `nix` does have feature `acct`\n\n\nfailed to select a version for `nix` which could resolve this conflict",
           "code_line": null,
           "msg_hallucination_types": [
             "feature"

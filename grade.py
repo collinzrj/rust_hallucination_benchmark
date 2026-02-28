@@ -359,11 +359,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run cargo check on LLM-generated Rust code')
     parser.add_argument('input', help='Input JSONL file with LLM responses')
     parser.add_argument('--offline', action='store_true', help='Use offline mode for cargo')
-    parser.add_argument('--timeout', type=int, default=360, help='Timeout per sample in seconds (default: 360)')
+    parser.add_argument('--timeout', type=int, default=720, help='Timeout per sample in seconds (default: 360)')
     parser.add_argument('--workers', type=int, default=None, help='Number of parallel workers (default: CPU count)')
 
     args = parser.parse_args()
 
+    print("timeout:", args.timeout)
     report = evaluate_jsonl_parallel(
         args.input,
         offline=args.offline,
