@@ -46,9 +46,12 @@ def to_markdown(rows):
     ]
 
     for row in rows:
+        model_name = row["model"]
+        if '/' in model_name:
+            model_name = model_name.split('/')[-1]
         total = row["total"]
         lines.append(
-            f"| {row['model']} | "
+            f"| {model_name.lower()} | "
             f"{row['method']} ({ratio_str(row['method'], total)}) | "
             f"{row['import']} ({ratio_str(row['import'], total)}) | "
             f"{row['feature']} ({ratio_str(row['feature'], total)}) | "
