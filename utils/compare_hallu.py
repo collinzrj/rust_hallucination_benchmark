@@ -67,7 +67,11 @@ paths = """/share/shmatikov/collin/code_hallucination/data/rust_hallucination_qu
 /share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260216_121021.qwen_qwen3.5-plus-02-15.jsonl.hallucination_analysis.json
 /share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_161647.gemini-3.1-pro-preview.jsonl.hallucination_analysis.json
 /share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_173820.kimi-k2.5.jsonl.hallucination_analysis.json
-/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_181823.minimax-m2.5.jsonl.hallucination_analysis.json"""
+/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_181823.minimax-m2.5.jsonl.hallucination_analysis.json
+/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_213412.qwen3.5-27b.jsonl.hallucination_analysis.json
+/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_215031.deepseek-v3.2.jsonl.hallucination_analysis.json
+/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_215635_qwen3-coder-next.jsonl.hallucination_analysis.json
+/share/shmatikov/collin/code_hallucination/data/rust_hallucination_questions_output_20260228_221518_qwen3.5-35b-a3b.jsonl.hallucination_analysis.json"""
 
 def main():
     path_list = [p for p in paths.split("\n") if p.strip()]

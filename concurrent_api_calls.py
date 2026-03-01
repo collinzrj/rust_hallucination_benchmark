@@ -66,7 +66,7 @@ class APICaller:
                 ],
                 extra_body={"enable_thinking": True}
             )
-            
+            print(response)
             result = {
                 **prompt_data,  # Include original data
                 "prompt": prompt,
@@ -74,6 +74,7 @@ class APICaller:
                 "model": self.model,
                 "timestamp": time.time()
             }
+
             # print(f"Calling API for prompt: {[prompt[:50]]}...")
             # response = await self.client.responses.create(
             #     model=self.model,
@@ -148,9 +149,9 @@ async def main():
         input_path = Path(args.input)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         if input_path.suffix == '.jsonl':
-            args.output = str(input_path.with_suffix('')) + f'_output_{timestamp}.jsonl'
+            args.output = str(input_path.with_suffix('')) + f'_output_{timestamp}_{args.model}.jsonl'
         else:
-            args.output = str(input_path) + f'_output_{timestamp}.jsonl'
+            args.output = str(input_path) + f'_output_{timestamp}_{args.model}.jsonl'
     
     # Load prompts
     print(f"Loading prompts from {args.input}...")
