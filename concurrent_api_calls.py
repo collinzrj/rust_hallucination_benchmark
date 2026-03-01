@@ -59,37 +59,37 @@ class APICaller:
     async def call_api(self, prompt: str, prompt_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """Make a single API call. Returns None on error."""
         try:
-            response = await self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ],
-                extra_body={"enable_thinking": True}
-            )
-            print(response)
-            result = {
-                **prompt_data,  # Include original data
-                "prompt": prompt,
-                "response": response.choices[0].message.content,
-                "model": self.model,
-                "timestamp": time.time()
-            }
-
-            # print(f"Calling API for prompt: {[prompt[:50]]}...")
-            # response = await self.client.responses.create(
+            # response = await self.client.chat.completions.create(
             #     model=self.model,
-            #     input=prompt,
+            #     messages=[
+            #         {"role": "user", "content": prompt}
+            #     ],
             #     extra_body={"enable_thinking": True}
             # )
             # print(response)
-
             # result = {
             #     **prompt_data,  # Include original data
             #     "prompt": prompt,
-            #     "response": response.output_text,
+            #     "response": response.choices[0].message.content,
             #     "model": self.model,
             #     "timestamp": time.time()
             # }
+
+            print(f"Calling API for prompt: {[prompt[:50]]}...")
+            response = await self.client.responses.create(
+                model=self.model,
+                input=prompt,
+                extra_body={"enable_thinking": True}
+            )
+            print(response)
+
+            result = {
+                **prompt_data,  # Include original data
+                "prompt": prompt,
+                "response": response.output_text,
+                "model": self.model,
+                "timestamp": time.time()
+            }
             
             return result
         except Exception as e:
@@ -148,10 +148,13 @@ async def main():
         from datetime import datetime
         input_path = Path(args.input)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        model_name = args.model
+        if '/' in model_name:
+            model_name = model_name.split('/')[-1]
         if input_path.suffix == '.jsonl':
-            args.output = str(input_path.with_suffix('')) + f'_output_{timestamp}_{args.model}.jsonl'
+            args.output = str(input_path.with_suffix('')) + f'_output_{timestamp}_{model_name}.jsonl'
         else:
-            args.output = str(input_path) + f'_output_{timestamp}_{args.model}.jsonl'
+            args.output = str(input_path) + f'_output_{timestamp}_{model_name}.jsonl'
     
     # Load prompts
     print(f"Loading prompts from {args.input}...")
