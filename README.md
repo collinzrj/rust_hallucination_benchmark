@@ -21,15 +21,19 @@ When generating code, LLMs sometimes "hallucinate" - they invent APIs, methods, 
 
 ## Benchmark Results
 
-| Model | Method Hallucination | Import Hallucination | Feature Hallucination | Any Hallucination |
-| --- | --- | --- | --- | --- |
-| google/gemini-3.1-pro-preview | 18 (5.22%) | 9 (2.61%) | 4 (1.16%) | 31 (8.99%) |
-| anthropic/claude-opus-4.6 | 16 (4.64%) | 53 (15.36%) | 6 (1.74%) | 68 (19.71%) |
-| openai/gpt-5.2 | 27 (7.83%) | 31 (8.99%) | 14 (4.06%) | 70 (20.29%) |
-| z-ai/glm-5 | 31 (8.99%) | 62 (17.97%) | 7 (2.03%) | 88 (25.51%) |
-| qwen/qwen3.5-plus-02-15 | 45 (13.04%) | 71 (20.58%) | 10 (2.90%) | 105 (30.43%) |
-| qwen3-max-2026-01-23 | 42 (12.17%) | 66 (19.13%) | 13 (3.77%) | 106 (30.72%) |
-| deepseek/deepseek-r1 | 43 (12.46%) | 62 (17.97%) | 32 (9.28%) | 123 (35.65%) |
+We report number and ratio of samples with different types of hallucination over 69 questions, each generated 5 times. We also report number of samples passed the cargo compilation check.
+
+| Model | Method Hallucination | Import Hallucination | Feature Hallucination | Any Hallucination | Pass Compilation |
+| --- | --- | --- | --- | --- | --- |
+| google/gemini-3.1-pro-preview | 18 (5.22%) | 9 (2.61%) | 4 (1.16%) | 31 (8.99%) |225 (65.22%) |
+| anthropic/claude-opus-4.6 | 16 (4.64%) | 53 (15.36%) | 6 (1.74%) | 68 (19.71%) |183 (53.04%) |
+| kimi/kimi-k2.5 | 23 (6.67%) | 36 (10.43%) | 18 (5.22%) | 69 (20.00%) |122 (35.36%) |
+| openai/gpt-5.2 | 27 (7.83%) | 31 (8.99%) | 14 (4.06%) | 70 (20.29%) |170 (49.28%) |
+| z-ai/glm-5 | 31 (8.99%) | 62 (17.97%) | 7 (2.03%) | 88 (25.51%) |118 (34.20%) |
+| MiniMax-M2.5 | 46 (13.33%) | 64 (18.55%) | 13 (3.77%) | 102 (29.57%) |56 (16.23%) |
+| qwen/qwen3.5-plus-02-15 | 45 (13.04%) | 71 (20.58%) | 10 (2.90%) | 105 (30.43%) |78 (22.61%) |
+| qwen3-max-2026-01-23 | 42 (12.17%) | 66 (19.13%) | 13 (3.77%) | 106 (30.72%) |117 (33.91%) |
+| deepseek/deepseek-r1 | 43 (12.46%) | 62 (17.97%) | 32 (9.28%) | 123 (35.65%) |88 (25.51%) |
 
 ## TODO
 - Evaluate More models
